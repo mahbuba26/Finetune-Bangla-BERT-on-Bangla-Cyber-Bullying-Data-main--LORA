@@ -93,7 +93,7 @@ def train_epoch(model, dataloader, optimizer, scheduler, device, class_weights=N
         optimizer.zero_grad()
         
         # Forward pass without computing loss in model (to use custom loss with weights)
-        outputs = model(input_ids, attention_mask=attention_mask)
+        outputs = model(input_ids, attention_mask=attention_mask, labels=None)
         
         # Calculate loss with optional class weights
         loss = loss_fct(outputs['logits'], labels)
@@ -153,7 +153,7 @@ def evaluate_model(model, dataloader, device, class_weights=None):
             attention_mask = batch['attention_mask'].to(device)
             labels = batch['labels'].to(device)
             
-            outputs = model(input_ids, attention_mask=attention_mask)
+            outputs = model(input_ids, attention_mask=attention_mask, labels=None)
             loss = loss_fct(outputs['logits'], labels)
             
             total_loss += loss.item()
