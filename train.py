@@ -284,7 +284,6 @@ def run_kfold_training(config, comments, labels, tokenizer, device):
             
             # Initialize model
             model = TransformerMultiLabelClassifier(model_name=config.model_path,
-                model_name=config.model_path,
                 dropout=config.dropout,
                 use_lora=config.use_lora,
                 lora_r=config.lora_r,
