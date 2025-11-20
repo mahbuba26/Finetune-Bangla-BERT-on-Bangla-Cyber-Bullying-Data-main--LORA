@@ -90,7 +90,7 @@ def parse_arguments():
     
     # Parse arguments
     args = parser.parse_args()
-    args.use_lora = args.use_lora.lower() == 'true'
+    # args.use_lora = args.use_lora.lower() == 'true'
 
 
     # Validate arguments
