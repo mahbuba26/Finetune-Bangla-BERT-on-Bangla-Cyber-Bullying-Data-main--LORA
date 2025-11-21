@@ -12,6 +12,7 @@ from sklearn.metrics import accuracy_score, hamming_loss, precision_score, recal
 import numpy as np
 from tqdm import tqdm
 import mlflow
+import time
 
 import data
 from model import TransformerMultiLabelClassifier
